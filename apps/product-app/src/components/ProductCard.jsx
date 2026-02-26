@@ -13,10 +13,12 @@ const ProductCard = ({ product }) => {
 
     const renderStars = (rating) => {
         const full = Math.floor(rating);
-        const half = rating % 1 >= 0.5;
+        const half = rating % 1 >= 0.3;
+        const empty = 5 - full - (half ? 1 : 0);
         let stars = '';
         for (let i = 0; i < full; i++) stars += '★';
-        if (half) stars += '½';
+        if (half) stars += '⯪';
+        for (let i = 0; i < empty; i++) stars += '☆';
         return stars;
     };
 
