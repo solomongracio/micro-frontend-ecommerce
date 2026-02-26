@@ -1,0 +1,7 @@
+{
+    "name": "@mfe/event-bus",
+    "version": "1.0.0",
+    "private": true,
+    "main": "src/index.js",
+    "module": "src/index.js"
+}

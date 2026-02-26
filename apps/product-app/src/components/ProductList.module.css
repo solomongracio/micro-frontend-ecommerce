@@ -1,0 +1,40 @@
+.section {
+    padding: 8px 0;
+}
+
+.header {
+    margin-bottom: 36px;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #e4e4e7, #a1a1aa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #71717a;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .title {
+        font-size: 26px;
+    }
+}

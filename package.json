@@ -1,0 +1,16 @@
+{
+  "name": "micro-frontend-ecommerce",
+  "packageManager": "npm@10.9.4",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build"
+  },
+  "devDependencies": {
+    "turbo": "^2.4.0"
+  }
+}
