@@ -77,6 +77,15 @@ Set these **Environment Variables** on `mfe-store`:
 - Remote apps serve `remoteEntry.js` with CORS headers (`vercel.json`)
 - App Shell uses SPA rewrites for client-side routing
 
+## Architectural Decisions & Trade-offs
+
+This Proof of Concept was designed to evaluate enterprise-scale frontend architecture, specifically solving the problem of monolithic release bottlenecks. Several key decisions were made to prioritize team autonomy and system resilience:
+
+* **Runtime Integration (Module Federation):** Chose Webpack Module Federation over build-time composition (like NPM packages). This allows independent deployment cycles. A dedicated "Cart Team" can deploy updates instantly without requiring the "Host Team" to trigger a full site rebuild.
+* **Decoupled State via Custom Events:** Deliberately avoided a shared global state manager (like Redux) across the federation boundary. Relying on a lightweight Event Bus using native Browser Custom Events ensures the micro frontends remain strictly decoupled.
+* **Styling Isolation:** Implemented CSS Modules to guarantee zero CSS leakage between applications, an absolute necessity when autonomous teams are injecting code into the same viewport.
+* **Resilience:** The App Shell wraps remote imports in React Error Boundaries. If the Cart network request fails or the application crashes, the Host gracefully catches the error without taking down the Product Discovery experience.
+
 ## Tech Stack
 
 - **React 18** — UI framework
