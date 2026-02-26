@@ -9,6 +9,10 @@
             "dependsOn": [
                 "^build"
             ],
+            "env": [
+                "PRODUCT_APP_URL",
+                "CART_APP_URL"
+            ],
             "outputs": [
                 "dist/**"
             ]
