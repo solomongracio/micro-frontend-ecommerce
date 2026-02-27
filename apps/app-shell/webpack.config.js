@@ -72,7 +72,7 @@ module.exports = (env, argv) => {
             }),
             new HtmlWebpackPlugin({
                 template: './public/index.html',
-                favicon: './public/favicon.png',
+                favicon: './public/favicon.svg',
             }),
         ],
         devServer: {

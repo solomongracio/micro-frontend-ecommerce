@@ -11,16 +11,7 @@ const ProductCard = ({ product }) => {
         setTimeout(() => setAdded(false), 1500);
     };
 
-    const renderStars = (rating) => {
-        const full = Math.floor(rating);
-        const half = rating % 1 >= 0.3;
-        const empty = 5 - full - (half ? 1 : 0);
-        let stars = '';
-        for (let i = 0; i < full; i++) stars += '★';
-        if (half) stars += '⯪';
-        for (let i = 0; i < empty; i++) stars += '☆';
-        return stars;
-    };
+    const renderStars = (rating) => '★'.repeat(rating);
 
     return (
         <article className={styles.card}>
